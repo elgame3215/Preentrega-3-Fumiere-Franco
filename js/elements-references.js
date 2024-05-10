@@ -7,5 +7,5 @@ const   oponentCardsContainer = document.getElementById('oponent-cards_container
         // BOTONES
         askCardButton = document.getElementById('ask-card'),
         standButton = document.getElementById('stand'),
-        // TABLA DE PUNTAJES
+        // TABLA DE HISTORIAL
         scoresTable = document.getElementById('scores-table');
