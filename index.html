@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preentrega 3</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>Preentrega 3</title>
 </head>
 <body>
-    
+	<div class="main-page">
+		<div class="interfaces_container border">
+			<div class="interface border">
+				<h3 class="player-rol-text">Oponente</h3>
+				<div class="cards_container">
+					<p>4</p>
+					<p>4</p>
+					<p>4</p>
+					<p>4</p>
+				</div>
+				<div class="score_container">
+					<p class="score_p" id="oponent-score">Puntaje: 21</p>
+				</div>
+			</div>
+			<div class="interface border">
+				<h3 class="player-rol-text">Jugador</h3>
+				<div class="cards_container">
+					<p>4</p>
+					<p>4</p>
+					<p>4</p>
+					<p>4</p>
+				</div>
+				<div class="score_container">
+					<p class="score_p" id="player-score">Puntaje: 21</p>
+				</div>
+			</div>
+		</div>
+		<div class="buttons_container">
+			<button class="ask-card-button border" id="ask-card">Pedir carta</button>
+			<button class="stand-button border" id="stand">Plantarse</button>
+		</div>
+		<div class="scores_container border">
+			<table class="scores-table">
+				<thead>
+					<tr class="table-row border">
+						<td>ronda</td>
+						<td>Jugador</td>
+						<td>Oponente</td>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </body>
 </html>
