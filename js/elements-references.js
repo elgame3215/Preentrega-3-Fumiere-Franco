@@ -1,4 +1,4 @@
-		// CARTAS
+		// CONTENEDORES DE CARTAS
 const   oponentCardsContainer = document.getElementById('oponent-cards_container'),
 		mainPlayerCardsContainer = document.getElementById('player-cards_container'),
 		// PUNTAJES

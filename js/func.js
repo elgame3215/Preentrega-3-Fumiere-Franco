@@ -12,17 +12,6 @@ function renderizeLastCardFor( player ) {
 	}
 }
 
-function playOponentsTurn() {
-	while ( oponentShouldPlay() ) {
-		oponent.askCard();
-	}
-	oponent.stand();
-
-	function oponentShouldPlay() {
-		return oponent.score < player.score && oponent.cards.length < 4;
-	}
-}
-
 function removeAkCardButton() {
 	askCardButton.remove();
 }
@@ -32,5 +21,19 @@ function renderizeUpdatedScoreFor( player ) {
 		mainPlayerScoreElement.innerText = `Puntaje: ${player.score}`;
 	} else {
 		oponentScoreElement.innerText = `Puntaje: ${player.score}`;
+	}
+}
+
+function saveRoundScores() {
+	const roundScores = {
+		playerScore: player.score,
+		oponentScore: oponent.score,
+	}
+	if (localStorage.getItem('scoresRecord')) {
+		const 	scoresRecord = JSON.parse(localStorage.getItem('scoresRecord'));
+		scoresRecord.push(roundScores);
+		localStorage.setItem('scoresRecord', JSON.stringify(scoresRecord));
+	} else {
+		localStorage.setItem('scoresRecord', JSON.stringify([roundScores]));
 	}
 }

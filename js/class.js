@@ -5,7 +5,6 @@ class Player {
 	cards = [];
 	score = 0;
 	ases = 0;
-	isPlaying = true;
 	askCard = () => {
 		const newCard = randomCard();
 		this.cards.push( newCard );
@@ -30,9 +29,19 @@ class Player {
 		}
 	}
 	stand = () => {
-		this.isPlaying = false;
 		if ( this.rol == 'main player' ) {
-			playOponentsTurn()
+			this.playOponentsTurn()
+		} else {
+			saveRoundScores()
+		}
+	}
+	playOponentsTurn() {
+		while ( oponentShouldPlay() ) {
+			oponent.askCard();
+		}
+		oponent.stand()
+		function oponentShouldPlay() {
+			return oponent.score < player.score && player.score < 21 && oponent.cards.length < 4;
 		}
 	}
 }
