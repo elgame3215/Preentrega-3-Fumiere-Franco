@@ -1,5 +1,5 @@
 function randomCard() {
-	return Math.ceil( Math.random() * 11 )
+	return Math.ceil( Math.random() * 10 )
 }
 
 function renderizeLastCardFor( player ) {
@@ -29,9 +29,8 @@ function removeAkCardButton() {
 
 function renderizeUpdatedScoreFor( player ) {
 	if ( player.rol == 'main player' ) {
-		mainPlayerScoreElement.innerText = player.score;
+		mainPlayerScoreElement.innerText = `Puntaje: ${player.score}`;
 	} else {
-		oponentScoreElement.innerText = player.score;
+		oponentScoreElement.innerText = `Puntaje: ${player.score}`;
 	}
-	
 }
