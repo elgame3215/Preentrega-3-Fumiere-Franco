@@ -5,19 +5,22 @@ class Player {
 	cards = [];
 	score = 0;
 	isPlaying = true;
-	askCard() {
+	askCard = () => {
 		const newCard = randomCard();
 		this.cards.push( newCard );
 		this.score += newCard;
-		if (this.rol == 'player') {
-			renderizeLastPlayerCard()
-		} else {
-			renderizeLastOponentCard()
+
+		renderizeLastCardFor( this )
+		renderizeUpdatedScoreFor( this );
+
+		const playerMustStand = player.cards.length > 3 || player.score > 21;
+		if (playerMustStand) {
+			removeAkCardButton();
 		}
 	}
-	stand() {
+	stand = () => {
 		this.isPlaying = false;
-		if ( this.rol == 'player' ) {
+		if ( this.rol == 'main player' ) {
 			playOponentsTurn()
 		}
 	}
