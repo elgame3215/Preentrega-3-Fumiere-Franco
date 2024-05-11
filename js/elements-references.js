@@ -5,6 +5,7 @@ const   oponentCardsContainer = document.getElementById('oponent-cards_container
 		oponentScoreElement = document.getElementById('oponent-score'),
 		mainPlayerScoreElement = document.getElementById('player-score'),
 		// BOTONES
+		buttonsContainer = document.getElementById('buttons'),
 		askCardButton = document.getElementById('ask-card'),
 		standButton = document.getElementById('stand'),
 		// TABLA DE HISTORIAL

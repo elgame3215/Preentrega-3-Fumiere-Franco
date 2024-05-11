@@ -25,7 +25,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	width: 	60vw;
-	height: 95vh;
+	height: 90%;
 	min-width: 400px;
 	background-color: var(--backGroundColor);
 }
@@ -102,4 +102,10 @@ body {
 	justify-content: space-evenly;
 	width: 100%;
 	border-width: 1px;
+}
+
+.result-message {
+	background-color: var(--white);
+	padding: 4px;
+	text-align: center;
 }

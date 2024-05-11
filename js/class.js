@@ -33,6 +33,7 @@ class Player {
 			this.playOponentsTurn()
 		} else {
 			saveRoundScores()
+			renderizeEndGameInterface();
 		}
 	}
 	playOponentsTurn() {
