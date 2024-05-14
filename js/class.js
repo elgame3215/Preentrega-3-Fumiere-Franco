@@ -42,7 +42,7 @@ class Player {
 		}
 		oponent.stand()
 		function oponentShouldPlay() {
-			return oponent.score < player.score && player.score < 21 && oponent.cards.length < 4;
+			return oponent.score < player.score && player.score <= 21 && oponent.cards.length < 4;
 		}
 	}
 }

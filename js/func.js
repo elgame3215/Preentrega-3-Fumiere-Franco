@@ -63,10 +63,11 @@ function renderizePlayAgainButton() {
 }
 
 function renderizeScoresRecord() {
-	if (localStorage.getItem('scoresRecord')) {
+	// muestra los resultados de todas las rondas en el DOM
+	if ( localStorage.getItem('scoresRecord') ) {
 		const 	scoresRecord = JSON.parse(localStorage.getItem('scoresRecord'))
 
-		for (let i = 0; i < scoresRecord.length; i++) {
+		for ( let i = 0; i < scoresRecord.length; i++ ) {
 			const round = scoresRecord[i];
 			appendRoundScoresToTable( round , i );
 		}
@@ -77,7 +78,7 @@ function renderizeScoresRecord() {
 				 	playerScoreTd = document.createElement('td'),
 				 	oponentScoreTd = document.createElement('td');
 
-			scoresRow.classList.add('table-row', 'border')
+			scoresRow.classList.add('table-row', 'border');
 
 			roundCountTd.innerText = i + 1;
 			scoresRow.appendChild(roundCountTd);
@@ -85,7 +86,7 @@ function renderizeScoresRecord() {
 			scoresRow.appendChild(playerScoreTd);
 			oponentScoreTd.innerText = round.oponentScore;
 			scoresRow.appendChild(oponentScoreTd);
-			scoresTable.appendChild(scoresRow)
+			scoresTable.appendChild(scoresRow);
 		}
 	}
 }
