@@ -5,6 +5,13 @@ class Player {
 	cards = [];
 	score = 0;
 	ases = 0;
+
+	initialize() {
+		// cada jugador inicia la ronda con 2 cartas
+		this.askCard();
+		this.askCard();
+		return this
+	}
 	askCard = () => {
 		const newCard = randomCard();
 		this.cards.push( newCard );
@@ -23,9 +30,12 @@ class Player {
 		}
 		renderizeUpdatedScoreFor( this );
 
-		const playerMustStand = player.cards.length > 3 || player.score > 21;
-		if (playerMustStand) {
-			removeAkCardButton();
+		if ( this.rol == 'main player' ) {
+			const	{cards: playerCards , score: playerScore} = this,
+					playerMustStand = playerCards.length > 3 || playerScore > 21;
+			if (playerMustStand) {
+				removeAskCardButton();
+			}
 		}
 	}
 	stand = () => {
@@ -42,7 +52,8 @@ class Player {
 		}
 		oponent.stand()
 		function oponentShouldPlay() {
-			return oponent.score < player.score && player.score <= 21 && oponent.cards.length < 4;
+			const {cards: oponentCards} = oponent;
+			return oponent.score < player.score && player.score <= 21 && oponentCards.length < 4;
 		}
 	}
 }
