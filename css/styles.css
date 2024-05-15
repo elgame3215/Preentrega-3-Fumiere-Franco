@@ -92,6 +92,10 @@ body {
 	background-color: var(--white);
 }
 
+.record_h3 {
+	margin: 10px;
+}
+
 .scores-table {
 	width: 100%;
 	border-collapse: collapse;
