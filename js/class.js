@@ -33,9 +33,7 @@ class Player {
 		if ( this.rol == 'main player' ) {
 			const	{cards: playerCards , score: playerScore} = this,
 					playerMustStand = playerCards.length > 3 || playerScore > 21;
-			if (playerMustStand) {
-				removeAskCardButton();
-			}
+			playerMustStand && askCardButton.remove();
 		}
 	}
 	stand = () => {

@@ -5,23 +5,11 @@ function randomCard() {
 function renderizeLastCardFor( {cards , rol} ) {
 	const newCardElement = document.createElement( 'p' );
 	newCardElement.innerText = cards[ cards.length - 1 ];
-	if ( rol == 'main player' ) {
-		mainPlayerCardsContainer.appendChild( newCardElement );
-	} else {
-		oponentCardsContainer.appendChild( newCardElement );
-	}
-}
-
-function removeAskCardButton() {
-	askCardButton.remove();
+	rol == 'main player' ? mainPlayerCardsContainer.appendChild( newCardElement ) : oponentCardsContainer.appendChild( newCardElement );
 }
 
 function renderizeUpdatedScoreFor( {rol , score} ) {
-	if ( rol == 'main player' ) {
-		mainPlayerScoreElement.innerText = `Puntaje: ${score}`;
-	} else {
-		oponentScoreElement.innerText = `Puntaje: ${score}`;
-	}
+	rol == 'main player' ? mainPlayerScoreElement.innerText = `Puntaje: ${score}` : oponentScoreElement.innerText = `Puntaje: ${score}`;
 }
 
 function saveRoundScores() {
@@ -47,7 +35,7 @@ function renderizeEndGameInterface() {
 
 function showWinner() {
 	const winnerElement = document.createElement('p');
-	const playerWins = (player.score > oponent.score && player.score <= 21) || oponent.score > 21 ;
+	const playerWins = (player.score > oponent.score && player.score <= 21) || oponent.score > 21;
     winnerElement.innerText = (playerWins) ? 'Felicitaciones, has ganado!' : 'Lo siento, has perdido.';
 	winnerElement.classList.add('result-message', 'border');
 	buttonsContainer.appendChild(winnerElement);
@@ -64,12 +52,13 @@ function renderizePlayAgainButton() {
 
 function renderizeScoresRecord() {
 	// muestra los resultados de todas las rondas en el DOM
-	if ( localStorage.getItem('scoresRecord') ) {
-		const 	scoresRecord = JSON.parse(localStorage.getItem('scoresRecord'))
+	let scoresRecord = localStorage.getItem('scoresRecord');
+	if ( scoresRecord ) {
+		scoresRecord = JSON.parse(localStorage.getItem('scoresRecord'))
 
 		for ( let i = 0; i < scoresRecord.length; i++ ) {
-			const round = scoresRecord[i];
-			appendRoundScoresToTable( round , i );
+			const roundScores = scoresRecord[i];
+			appendRoundScoresToTable( roundScores , i );
 		}
 
 		function appendRoundScoresToTable( round , i ) {
