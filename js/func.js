@@ -43,6 +43,7 @@ function showWinner() {
 
 function renderizePlayAgainButton() {
 	const playAgainButton = document.createElement('button');
+	playAgainButton.classList.add( 'border' )
     playAgainButton.innerText = 'Volver a jugar';
     buttonsContainer.appendChild(playAgainButton);
     playAgainButton.addEventListener('click', () => {
