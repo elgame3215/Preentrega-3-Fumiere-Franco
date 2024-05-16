@@ -51,7 +51,6 @@ function renderizePlayAgainButton() {
 }
 
 function renderizeScoresRecord() {
-	// muestra los resultados de todas las rondas en el DOM
 	const JSONScoresRecord = localStorage.getItem('scoresRecord');
 	if ( JSONScoresRecord ) {
 		const scoresRecord = JSON.parse(JSONScoresRecord)
@@ -77,5 +76,14 @@ function renderizeScoresRecord() {
 			scoresRow.appendChild(oponentScoreTd);
 			scoresTable.appendChild(scoresRow);
 		}
+	} else {
+		while (scoresTable.firstChild) {
+			scoresTable.removeChild(scoresTable.firstChild);
+		}
 	}
+}
+
+function clearRecord() {
+	localStorage.clear();
+	renderizeScoresRecord();
 }

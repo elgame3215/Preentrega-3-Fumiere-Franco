@@ -8,5 +8,6 @@ const   oponentCardsContainer = document.getElementById('oponent-cards_container
 		buttonsContainer = document.getElementById('buttons'),
 		askCardButton = document.getElementById('ask-card'),
 		standButton = document.getElementById('stand'),
+		clearRecordButton = document.getElementById('clear-record_button'),
 		// TABLA DE HISTORIAL
 		scoresTable = document.getElementById('scores-table');
