@@ -52,13 +52,13 @@ function renderizePlayAgainButton() {
 
 function renderizeScoresRecord() {
 	// muestra los resultados de todas las rondas en el DOM
-	let scoresRecord = localStorage.getItem('scoresRecord');
-	if ( scoresRecord ) {
-		scoresRecord = JSON.parse(localStorage.getItem('scoresRecord'))
+	let JSONScoresRecord = localStorage.getItem('scoresRecord');
+	if ( JSONScoresRecord ) {
+		const scoresRecord = JSON.parse(JSONScoresRecord)
 
 		for ( let i = 0; i < scoresRecord.length; i++ ) {
 			const roundScores = scoresRecord[i];
-			appendRoundScoresToTable( roundScores , i );
+			appendRoundScoresToTable( roundScores , i + 1 );
 		}
 
 		function appendRoundScoresToTable( round , i ) {
@@ -69,7 +69,7 @@ function renderizeScoresRecord() {
 
 			scoresRow.classList.add('table-row', 'border');
 
-			roundCountTd.innerText = i + 1;
+			roundCountTd.innerText = i;
 			scoresRow.appendChild(roundCountTd);
 			playerScoreTd.innerText = round.playerScore;
 			scoresRow.appendChild(playerScoreTd);
