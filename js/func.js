@@ -52,7 +52,7 @@ function renderizePlayAgainButton() {
 
 function renderizeScoresRecord() {
 	// muestra los resultados de todas las rondas en el DOM
-	let JSONScoresRecord = localStorage.getItem('scoresRecord');
+	const JSONScoresRecord = localStorage.getItem('scoresRecord');
 	if ( JSONScoresRecord ) {
 		const scoresRecord = JSON.parse(JSONScoresRecord)
 
