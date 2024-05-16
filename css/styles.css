@@ -19,6 +19,14 @@ body {
 	border: solid 2px #111;
 }
 
+img {
+	position: absolute;
+	margin-top: -95px;
+	mix-blend-mode: color-burn;
+	aspect-ratio: 6/5;
+	height: 300px;
+}
+
 .main-page {
 	display: flex;
 	flex-direction: column;
@@ -27,8 +35,10 @@ body {
 	width: 	60vw;
 	height: 90%;
 	min-width: 400px;
+	margin-top: 125px;
 	background-color: var(--backGroundColor);
 }
+
 
 .interfaces_container {
 	display: flex;
