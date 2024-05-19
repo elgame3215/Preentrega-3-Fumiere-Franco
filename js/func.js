@@ -17,11 +17,11 @@ function saveRoundScores() {
 		playerScore: player.score,
 		oponentScore: oponent.score,
 	}
-	const scoresRecord = localStorage.getItem('scoresRecord');
-	if (scoresRecord) {
-		const JSONScoresRecord = JSON.parse(scoresRecord);
-		JSONScoresRecord.push(roundScores);
-		localStorage.setItem('scoresRecord' , JSON.stringify(JSONScoresRecord));
+	const JSONScoresRecord = localStorage.getItem('scoresRecord');
+	if ( JSONScoresRecord ) {
+		const scoresRecord = JSON.parse(JSONScoresRecord);
+		scoresRecord.push(roundScores);
+		localStorage.setItem('scoresRecord' , JSON.stringify(scoresRecord));
 	} else {
 		localStorage.setItem('scoresRecord' , JSON.stringify([roundScores]));
 	}
