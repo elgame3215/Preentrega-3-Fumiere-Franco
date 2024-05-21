@@ -23,7 +23,7 @@ function saveRoundScores() {
 		scoresRecord.push(roundScores);
 		localStorage.setItem('scoresRecord' , JSON.stringify(scoresRecord));
 	} else {
-		localStorage.setItem('scoresRecord' , JSON.stringify([roundScores]));
+		localStorage.setItem('scoresRecord' , JSON.stringify( [roundScores] ) );
 	}
 }
 
@@ -35,8 +35,9 @@ function renderizeEndGameInterface() {
 }
 
 function showWinner() {
-	const winnerElement = document.createElement('p');
-	const playerWins = (player.score > oponent.score && player.score <= 21) || oponent.score > 21;
+	const 	winnerElement = document.createElement('p'),
+			playerWins = ( player.score > oponent.score && player.score <= 21 ) || oponent.score > 21;
+
     winnerElement.innerText = (playerWins) ? 'Felicitaciones, has ganado!' : 'Lo siento, has perdido.';
 	winnerElement.classList.add('result-message', 'border');
 	buttonsContainer.appendChild(winnerElement);
@@ -72,10 +73,13 @@ function renderizeScoresRecord() {
 
 			roundCountTd.innerText = i;
 			scoresRow.appendChild(roundCountTd);
+
 			playerScoreTd.innerText = round.playerScore;
 			scoresRow.appendChild(playerScoreTd);
+
 			oponentScoreTd.innerText = round.oponentScore;
 			scoresRow.appendChild(oponentScoreTd);
+
 			scoresTable.appendChild(scoresRow);
 		}
 	} else {
